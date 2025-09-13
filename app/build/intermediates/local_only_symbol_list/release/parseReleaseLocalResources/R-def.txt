@@ -24,6 +24,9 @@ color white
 drawable bg_gradient
 drawable bottom_nav_colors
 drawable card_bg
+drawable gradient_overlay
+drawable ic_add
+drawable ic_delete
 drawable ic_discover
 drawable ic_dislike
 drawable ic_launcher_foreground
@@ -38,6 +41,7 @@ drawable ic_playlist_add
 drawable ic_profile
 drawable ic_search
 drawable ic_swipe
+drawable rounded_image
 drawable styles
 drawable tab_indicator
 drawable tab_indicator_default
@@ -46,13 +50,16 @@ id actionButtons
 id actionLayout
 id bottomNavigation
 id btnAddToPlaylist
+id btnDelete
 id btnLike
 id btnNext
 id btnPlay
 id btnSkip
 id btnStartSwiping
 id cardWelcome
+id emptyState
 id fabAddToPlaylist
+id fabCreatePlaylist
 id fabDislike
 id fabLike
 id fabLyrics
@@ -68,6 +75,7 @@ id navigation_profile
 id navigation_search
 id navigation_swipe
 id nowPlayingCard
+id playlistRecyclerView
 id progressBar
 id recommendedRecyclerView
 id recommendedTitle
@@ -80,6 +88,8 @@ id tvAlbumName
 id tvArtistName
 id tvDescription
 id tvEmptyState
+id tvPlaylistName
+id tvSongCount
 id tvSongTitle
 id tvTitle
 id tvWelcomeSubtitle
@@ -92,6 +102,7 @@ layout activity_search
 layout activity_swipe
 layout activity_welcome
 layout item_card
+layout item_playlist
 layout item_song
 layout item_welcome
 menu bottom_nav_menu

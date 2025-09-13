@@ -545,6 +545,113 @@ public final class SongDao_Impl implements SongDao {
     }, $completion);
   }
 
+  @Override
+  public Object getAllSongs(final Continuation<? super List<Song>> $completion) {
+    final String _sql = "SELECT * FROM songs";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+    final CancellationSignal _cancellationSignal = DBUtil.createCancellationSignal();
+    return CoroutinesRoom.execute(__db, false, _cancellationSignal, new Callable<List<Song>>() {
+      @Override
+      @NonNull
+      public List<Song> call() throws Exception {
+        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+        try {
+          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+          final int _cursorIndexOfTitle = CursorUtil.getColumnIndexOrThrow(_cursor, "title");
+          final int _cursorIndexOfArtist = CursorUtil.getColumnIndexOrThrow(_cursor, "artist");
+          final int _cursorIndexOfAlbum = CursorUtil.getColumnIndexOrThrow(_cursor, "album");
+          final int _cursorIndexOfAlbumCover = CursorUtil.getColumnIndexOrThrow(_cursor, "albumCover");
+          final int _cursorIndexOfPreviewUrl = CursorUtil.getColumnIndexOrThrow(_cursor, "previewUrl");
+          final int _cursorIndexOfDuration = CursorUtil.getColumnIndexOrThrow(_cursor, "duration");
+          final int _cursorIndexOfGenre = CursorUtil.getColumnIndexOrThrow(_cursor, "genre");
+          final int _cursorIndexOfReleaseDate = CursorUtil.getColumnIndexOrThrow(_cursor, "releaseDate");
+          final int _cursorIndexOfPopularity = CursorUtil.getColumnIndexOrThrow(_cursor, "popularity");
+          final int _cursorIndexOfExternalUrl = CursorUtil.getColumnIndexOrThrow(_cursor, "externalUrl");
+          final int _cursorIndexOfIsLiked = CursorUtil.getColumnIndexOrThrow(_cursor, "isLiked");
+          final int _cursorIndexOfPlaylistName = CursorUtil.getColumnIndexOrThrow(_cursor, "playlistName");
+          final List<Song> _result = new ArrayList<Song>(_cursor.getCount());
+          while (_cursor.moveToNext()) {
+            final Song _item;
+            final String _tmpId;
+            if (_cursor.isNull(_cursorIndexOfId)) {
+              _tmpId = null;
+            } else {
+              _tmpId = _cursor.getString(_cursorIndexOfId);
+            }
+            final String _tmpTitle;
+            if (_cursor.isNull(_cursorIndexOfTitle)) {
+              _tmpTitle = null;
+            } else {
+              _tmpTitle = _cursor.getString(_cursorIndexOfTitle);
+            }
+            final String _tmpArtist;
+            if (_cursor.isNull(_cursorIndexOfArtist)) {
+              _tmpArtist = null;
+            } else {
+              _tmpArtist = _cursor.getString(_cursorIndexOfArtist);
+            }
+            final String _tmpAlbum;
+            if (_cursor.isNull(_cursorIndexOfAlbum)) {
+              _tmpAlbum = null;
+            } else {
+              _tmpAlbum = _cursor.getString(_cursorIndexOfAlbum);
+            }
+            final String _tmpAlbumCover;
+            if (_cursor.isNull(_cursorIndexOfAlbumCover)) {
+              _tmpAlbumCover = null;
+            } else {
+              _tmpAlbumCover = _cursor.getString(_cursorIndexOfAlbumCover);
+            }
+            final String _tmpPreviewUrl;
+            if (_cursor.isNull(_cursorIndexOfPreviewUrl)) {
+              _tmpPreviewUrl = null;
+            } else {
+              _tmpPreviewUrl = _cursor.getString(_cursorIndexOfPreviewUrl);
+            }
+            final int _tmpDuration;
+            _tmpDuration = _cursor.getInt(_cursorIndexOfDuration);
+            final String _tmpGenre;
+            if (_cursor.isNull(_cursorIndexOfGenre)) {
+              _tmpGenre = null;
+            } else {
+              _tmpGenre = _cursor.getString(_cursorIndexOfGenre);
+            }
+            final String _tmpReleaseDate;
+            if (_cursor.isNull(_cursorIndexOfReleaseDate)) {
+              _tmpReleaseDate = null;
+            } else {
+              _tmpReleaseDate = _cursor.getString(_cursorIndexOfReleaseDate);
+            }
+            final int _tmpPopularity;
+            _tmpPopularity = _cursor.getInt(_cursorIndexOfPopularity);
+            final String _tmpExternalUrl;
+            if (_cursor.isNull(_cursorIndexOfExternalUrl)) {
+              _tmpExternalUrl = null;
+            } else {
+              _tmpExternalUrl = _cursor.getString(_cursorIndexOfExternalUrl);
+            }
+            final boolean _tmpIsLiked;
+            final int _tmp;
+            _tmp = _cursor.getInt(_cursorIndexOfIsLiked);
+            _tmpIsLiked = _tmp != 0;
+            final String _tmpPlaylistName;
+            if (_cursor.isNull(_cursorIndexOfPlaylistName)) {
+              _tmpPlaylistName = null;
+            } else {
+              _tmpPlaylistName = _cursor.getString(_cursorIndexOfPlaylistName);
+            }
+            _item = new Song(_tmpId,_tmpTitle,_tmpArtist,_tmpAlbum,_tmpAlbumCover,_tmpPreviewUrl,_tmpDuration,_tmpGenre,_tmpReleaseDate,_tmpPopularity,_tmpExternalUrl,_tmpIsLiked,_tmpPlaylistName);
+            _result.add(_item);
+          }
+          return _result;
+        } finally {
+          _cursor.close();
+          _statement.release();
+        }
+      }
+    }, $completion);
+  }
+
   @NonNull
   public static List<Class<?>> getRequiredConverters() {
     return Collections.emptyList();

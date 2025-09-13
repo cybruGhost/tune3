@@ -7,6 +7,7 @@ import com.example.swipfy.data.models.Song
 
 @Dao
 interface SongDao {
+
     @Insert
     suspend fun insert(song: Song)
 
@@ -23,5 +24,9 @@ interface SongDao {
     suspend fun updateLikeStatus(id: String, isLiked: Boolean)
 
     @Query("UPDATE songs SET playlistName = :playlistName WHERE id = :id")
-    suspend fun addToPlaylist(id: String, playlistName: String)
+    suspend fun addToPlaylist(id: String, playlistName: String?)
+
+    // ✅ Add this method to fix your compile error
+    @Query("SELECT * FROM songs")
+    suspend fun getAllSongs(): List<Song>
 }

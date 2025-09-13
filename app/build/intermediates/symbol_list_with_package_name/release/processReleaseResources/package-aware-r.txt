@@ -3175,6 +3175,8 @@ drawable exo_styled_controls_speed
 drawable exo_styled_controls_subtitle_off
 drawable exo_styled_controls_subtitle_on
 drawable exo_styled_controls_vr
+drawable gradient_overlay
+drawable ic_add
 drawable ic_arrow_back_black_24
 drawable ic_call_answer
 drawable ic_call_answer_low
@@ -3184,6 +3186,7 @@ drawable ic_call_decline
 drawable ic_call_decline_low
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
+drawable ic_delete
 drawable ic_discover
 drawable ic_dislike
 drawable ic_keyboard_black_24dp
@@ -3279,6 +3282,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable rounded_image
 drawable styles
 drawable tab_indicator
 drawable tab_indicator_default
@@ -3390,6 +3394,7 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id btnAddToPlaylist
+id btnDelete
 id btnLike
 id btnNext
 id btnPlay
@@ -3475,6 +3480,7 @@ id edit_query
 id edit_text_id
 id elastic
 id embed
+id emptyState
 id end
 id endToStart
 id end_padder
@@ -3533,6 +3539,7 @@ id exo_vr
 id expand_activities_button
 id expanded_menu
 id fabAddToPlaylist
+id fabCreatePlaylist
 id fabDislike
 id fabLike
 id fabLyrics
@@ -3727,6 +3734,7 @@ id pathRelative
 id peekHeight
 id percent
 id pin
+id playlistRecyclerView
 id pooling_container_listener_holder_tag
 id position
 id postLayout
@@ -3869,6 +3877,8 @@ id tvAlbumName
 id tvArtistName
 id tvDescription
 id tvEmptyState
+id tvPlaylistName
+id tvSongCount
 id tvSongTitle
 id tvTitle
 id tvWelcomeSubtitle
@@ -4051,6 +4061,7 @@ layout exo_track_selection_dialog
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
 layout item_card
+layout item_playlist
 layout item_song
 layout item_welcome
 layout m3_alert_dialog

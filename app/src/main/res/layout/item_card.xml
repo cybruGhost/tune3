@@ -2,37 +2,51 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_margin="8dp"
-    app:cardBackgroundColor="@color/card_background"
-    app:cardCornerRadius="24dp"
-    app:cardElevation="8dp">
+    android:layout_height="220dp"
+    android:layout_margin="12dp"
+    app:cardBackgroundColor="@android:color/transparent"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="10dp"
+    app:strokeWidth="0dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <!-- Album Thumbnail with Rounded Corners & Overlay -->
         <ImageView
             android:id="@+id/ivAlbumCover"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:scaleType="centerCrop"
-            app:layout_constraintBottom_toTopOf="@+id/songInfoLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:adjustViewBounds="true"
+            android:contentDescription="Album Cover"
+            android:src="@drawable/ic_music_note"
             app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/ic_music_note" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:clipToOutline="true" />
 
+        <!-- Gradient Overlay for Text Visibility -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:background="@drawable/gradient_overlay"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Song Info -->
         <LinearLayout
             android:id="@+id/songInfoLayout"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/card_bg"
             android:orientation="vertical"
             android:padding="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
             <TextView
                 android:id="@+id/tvSongTitle"
@@ -41,7 +55,7 @@
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:text="Song Title"
-                android:textColor="@color/white"
+                android:textColor="@android:color/white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -53,7 +67,7 @@
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:text="Artist Name"
-                android:textColor="@color/white"
+                android:textColor="@android:color/white"
                 android:textSize="14sp" />
 
             <TextView
@@ -64,37 +78,37 @@
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:text="Album Name"
-                android:textColor="@color/white"
+                android:textColor="@android:color/white"
                 android:textSize="12sp"
                 android:alpha="0.8" />
 
         </LinearLayout>
 
+        <!-- Popularity / Likes -->
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_margin="12dp"
             android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:layout_marginEnd="4dp"
                 android:src="@drawable/ic_like"
                 android:tint="@color/green_500" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
                 android:text="92%"
-                android:textColor="@color/white"
+                android:textColor="@android:color/white"
                 android:textSize="12sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </com.google.android.material.card.MaterialCardView>

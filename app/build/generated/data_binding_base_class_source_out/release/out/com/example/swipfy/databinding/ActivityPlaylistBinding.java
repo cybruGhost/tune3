@@ -4,32 +4,49 @@ package com.example.swipfy.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.swipfy.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
 public final class ActivityPlaylistBinding implements ViewBinding {
   @NonNull
-  private final LinearLayout rootView;
+  private final CoordinatorLayout rootView;
 
   @NonNull
-  public final TextView textView;
+  public final TextView emptyState;
 
-  private ActivityPlaylistBinding(@NonNull LinearLayout rootView, @NonNull TextView textView) {
+  @NonNull
+  public final FloatingActionButton fabCreatePlaylist;
+
+  @NonNull
+  public final RecyclerView playlistRecyclerView;
+
+  @NonNull
+  public final Toolbar toolbar;
+
+  private ActivityPlaylistBinding(@NonNull CoordinatorLayout rootView, @NonNull TextView emptyState,
+      @NonNull FloatingActionButton fabCreatePlaylist, @NonNull RecyclerView playlistRecyclerView,
+      @NonNull Toolbar toolbar) {
     this.rootView = rootView;
-    this.textView = textView;
+    this.emptyState = emptyState;
+    this.fabCreatePlaylist = fabCreatePlaylist;
+    this.playlistRecyclerView = playlistRecyclerView;
+    this.toolbar = toolbar;
   }
 
   @Override
   @NonNull
-  public LinearLayout getRoot() {
+  public CoordinatorLayout getRoot() {
     return rootView;
   }
 
@@ -54,13 +71,32 @@ public final class ActivityPlaylistBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.textView;
-      TextView textView = ViewBindings.findChildViewById(rootView, id);
-      if (textView == null) {
+      id = R.id.emptyState;
+      TextView emptyState = ViewBindings.findChildViewById(rootView, id);
+      if (emptyState == null) {
         break missingId;
       }
 
-      return new ActivityPlaylistBinding((LinearLayout) rootView, textView);
+      id = R.id.fabCreatePlaylist;
+      FloatingActionButton fabCreatePlaylist = ViewBindings.findChildViewById(rootView, id);
+      if (fabCreatePlaylist == null) {
+        break missingId;
+      }
+
+      id = R.id.playlistRecyclerView;
+      RecyclerView playlistRecyclerView = ViewBindings.findChildViewById(rootView, id);
+      if (playlistRecyclerView == null) {
+        break missingId;
+      }
+
+      id = R.id.toolbar;
+      Toolbar toolbar = ViewBindings.findChildViewById(rootView, id);
+      if (toolbar == null) {
+        break missingId;
+      }
+
+      return new ActivityPlaylistBinding((CoordinatorLayout) rootView, emptyState,
+          fabCreatePlaylist, playlistRecyclerView, toolbar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
