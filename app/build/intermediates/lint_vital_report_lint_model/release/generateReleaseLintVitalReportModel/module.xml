@@ -1,0 +1,19 @@
+<lint-module
+    format="1"
+    dir="/mnt/data/tune3/app"
+    name=":app"
+    type="APP"
+    maven="SwipfyAndroid:app:unspecified"
+    agpVersion="8.5.0"
+    buildFolder="build"
+    bootClassPath="/home/cyberghost/Android/Sdk/platforms/android-34/android.jar:/home/cyberghost/Android/Sdk/build-tools/34.0.0/core-lambda-stubs.jar"
+    javaSourceLevel="17"
+    compileTarget="android-34"
+    neverShrinking="true">
+  <lintOptions
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="release"/>
+</lint-module>

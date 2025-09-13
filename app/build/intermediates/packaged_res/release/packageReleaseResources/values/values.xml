@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accent">#FFFF4081</color>
+    <color name="background_gradient_end">#FF764BA2</color>
+    <color name="background_gradient_start">#FF667EEA</color>
+    <color name="black">#FF000000</color>
+    <color name="blue_500">#FF2196F3</color>
+    <color name="card_background">#FFFFFFFF</color>
+    <color name="gray_100">#FFF5F5F5</color>
+    <color name="gray_300">#FFE0E0E0</color>
+    <color name="gray_500">#FF9E9E9E</color>
+    <color name="gray_700">#FF616161</color>
+    <color name="green_500">#FF4CAF50</color>
+    <color name="orange_500">#FFFF9800</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="red_500">#FFF44336</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="text_primary">#FF212121</color>
+    <color name="text_secondary">#FF757575</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="add_to_playlist">Add to Playlist</string>
+    <string name="added_to_liked">Added to liked songs</string>
+    <string name="app_name">Swipfy</string>
+    <string name="dislike">Dislike</string>
+    <string name="error_loading_songs">Error loading songs. Please try again.</string>
+    <string name="get_started">Get Started</string>
+    <string name="like">Like</string>
+    <string name="navigation_discover">Discover</string>
+    <string name="navigation_playlists">Playlists</string>
+    <string name="navigation_profile">Profile</string>
+    <string name="navigation_search">Search</string>
+    <string name="navigation_swipe">Swipe</string>
+    <string name="next">Next</string>
+    <string name="no_songs_found">No songs found. Try a different search.</string>
+    <string name="recommended_for_you">Recommended for You</string>
+    <string name="search_hint">Search for artists or songs...</string>
+    <string name="skip">Skip</string>
+    <string name="song_skipped">Song skipped</string>
+    <string name="start_swiping">Start Swiping</string>
+    <string name="view_lyrics">View Lyrics</string>
+    <string name="welcome_subtitle">Swipe through songs and build your perfect playlist</string>
+    <string name="welcome_title">Discover Music You\'ll Love</string>
+    <style name="CardStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="cardBackgroundColor">@android:color/white</item>
+    </style>
+    <style name="FabStyle">
+        <item name="android:layout_width">56dp</item>
+        <item name="android:layout_height">56dp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="tint">@android:color/white</item>
+        <item name="backgroundTint">?attr/colorPrimary</item>
+        <item name="cornerRadius">28dp</item>
+        <item name="elevation">8dp</item>
+    </style>
+    <style name="Theme.Swipfy" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:navigationBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+    </style>
+    <style name="Theme.Swipfy.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="Theme.Swipfy.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.Swipfy.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+</resources>

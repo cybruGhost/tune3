@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.5.0" type="incidents">
+
+    <incident
+        id="Instantiatable"
+        severity="fatal"
+        message="`SwipeActivity` must extend android.app.Activity">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*manifest*0}"
+            line="13"
+            column="33"
+            startOffset="432"
+            endLine="13"
+            endColumn="47"
+            endOffset="446"/>
+    </incident>
+
+    <incident
+        id="Instantiatable"
+        severity="fatal"
+        message="`MainActivity` must extend android.app.Activity">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*manifest*0}"
+            line="16"
+            column="27"
+            startOffset="496"
+            endLine="16"
+            endColumn="40"
+            endOffset="509"/>
+    </incident>
+
+    <incident
+        id="Instantiatable"
+        severity="fatal"
+        message="`CardStackView` must extend android.view.View">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*resDir*0}/layout/activity_swipe.xml"
+            line="15"
+            column="9"
+            startOffset="493"
+            endLine="18"
+            endColumn="51"
+            endOffset="686"/>
+    </incident>
+
+    <incident
+        id="Instantiatable"
+        severity="fatal"
+        message="`FloatingActionButton` must extend android.view.View">
+        <location
+            file="${:app*release*MAIN*sourceProvider*0*resDir*0}/layout/activity_swipe.xml"
+            line="77"
+            column="9"
+            startOffset="2628"
+            endLine="81"
+            endColumn="46"
+            endOffset="2879"/>
+    </incident>
+
+</incidents>

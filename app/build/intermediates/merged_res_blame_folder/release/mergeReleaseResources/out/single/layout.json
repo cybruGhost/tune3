@@ -1,0 +1,46 @@
+[
+    {
+        "merged": "com.example.swipfy.app-mergeReleaseResources-45:/layout/activity_swipe.xml",
+        "source": "com.example.swipfy.app-main-47:/layout/activity_swipe.xml"
+    },
+    {
+        "merged": "com.example.swipfy.app-mergeReleaseResources-45:/layout/item_card.xml",
+        "source": "com.example.swipfy.app-main-47:/layout/item_card.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-mergeReleaseResources-45:/layout/activity_search.xml",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/layout/activity_search.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-mergeReleaseResources-45:/layout/item_welcome.xml",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/layout/item_welcome.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-mergeReleaseResources-45:/layout/item_song.xml",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/layout/item_song.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-mergeReleaseResources-45:/layout/activity_main.xml",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-mergeReleaseResources-45:/layout/activity_playlist.xml",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/layout/activity_playlist.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-mergeReleaseResources-45:/layout/activity_profile.xml",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/layout/activity_profile.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-mergeReleaseResources-45:/layout/activity_welcome.xml",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/layout/activity_welcome.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-mergeReleaseResources-45:/layout/activity_swipe.xml",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/layout/activity_swipe.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-mergeReleaseResources-45:/layout/item_card.xml",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/layout/item_card.xml"
+    }
+]

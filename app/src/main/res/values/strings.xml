@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Swipfy</string>
+    <string name="welcome_title">Discover Music You\'ll Love</string>
+    <string name="welcome_subtitle">Swipe through songs and build your perfect playlist</string>
+    <string name="get_started">Get Started</string>
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    
+    <!-- Navigation -->
+    <string name="navigation_discover">Discover</string>
+    <string name="navigation_swipe">Swipe</string>
+    <string name="navigation_playlists">Playlists</string>
+    <string name="navigation_profile">Profile</string>
+    <string name="navigation_search">Search</string>
+    
+    <!-- Actions -->
+    <string name="start_swiping">Start Swiping</string>
+    <string name="search_hint">Search for artists or songs...</string>
+    <string name="recommended_for_you">Recommended for You</string>
+    
+    <!-- Swipe actions -->
+    <string name="like">Like</string>
+    <string name="dislike">Dislike</string>
+    <string name="add_to_playlist">Add to Playlist</string>
+    <string name="view_lyrics">View Lyrics</string>
+    
+    <!-- Messages -->
+    <string name="no_songs_found">No songs found. Try a different search.</string>
+    <string name="error_loading_songs">Error loading songs. Please try again.</string>
+    <string name="added_to_liked">Added to liked songs</string>
+    <string name="song_skipped">Song skipped</string>
+</resources>

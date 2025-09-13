@@ -1,0 +1,146 @@
+[
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-release-46:/layout_activity_swipe.xml.flat",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/layout/activity_swipe.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-release-46:/layout_item_card.xml.flat",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/layout/item_card.xml"
+    },
+    {
+        "merged": "com.example.swipfy.app-release-46:/xml_network_security_config.xml.flat",
+        "source": "com.example.swipfy.app-main-47:/xml/network_security_config.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-release-46:/drawable_ic_pause.xml.flat",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/drawable/ic_pause.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-release-46:/drawable_tab_indicator.xml.flat",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/drawable/tab_indicator.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-release-46:/drawable_ic_discover.xml.flat",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/drawable/ic_discover.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-release-46:/drawable_ic_like.xml.flat",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/drawable/ic_like.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-release-46:/drawable_ic_like_outline.xml.flat",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/drawable/ic_like_outline.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-release-46:/layout_activity_welcome.xml.flat",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/layout/activity_welcome.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-release-46:/layout_activity_playlist.xml.flat",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/layout/activity_playlist.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-release-46:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-release-46:/drawable_tab_indicator_default.xml.flat",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/drawable/tab_indicator_default.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-release-46:/drawable_bottom_nav_colors.xml.flat",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/drawable/bottom_nav_colors.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-release-46:/layout_item_welcome.xml.flat",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/layout/item_welcome.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-release-46:/drawable_ic_music_note.xml.flat",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/drawable/ic_music_note.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-release-46:/drawable_card_bg.xml.flat",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/drawable/card_bg.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-release-46:/drawable_ic_lyrics.xml.flat",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/drawable/ic_lyrics.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-release-46:/drawable_bg_gradient.xml.flat",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/drawable/bg_gradient.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-release-46:/drawable_ic_profile.xml.flat",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/drawable/ic_profile.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-release-46:/drawable_ic_playlist_add.xml.flat",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/drawable/ic_playlist_add.xml"
+    },
+    {
+        "merged": "com.example.swipfy.app-release-46:/layout_item_card.xml.flat",
+        "source": "com.example.swipfy.app-main-47:/layout/item_card.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-release-46:/menu_bottom_nav_menu.xml.flat",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/menu/bottom_nav_menu.xml"
+    },
+    {
+        "merged": "com.example.swipfy.app-release-46:/layout_activity_swipe.xml.flat",
+        "source": "com.example.swipfy.app-main-47:/layout/activity_swipe.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-release-46:/drawable_tab_indicator_selected.xml.flat",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/drawable/tab_indicator_selected.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-release-46:/drawable_ic_play.xml.flat",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/drawable/ic_play.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-release-46:/layout_activity_search.xml.flat",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/layout/activity_search.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-release-46:/drawable_ic_swipe.xml.flat",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/drawable/ic_swipe.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-release-46:/layout_item_song.xml.flat",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/layout/item_song.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-release-46:/drawable_styles.xml.flat",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/drawable/styles.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-release-46:/mipmap_ic_launcher.png.flat",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/mipmap/ic_launcher.png"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-release-46:/drawable_ic_dislike.xml.flat",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/drawable/ic_dislike.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-release-46:/layout_activity_profile.xml.flat",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/layout/activity_profile.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-release-46:/layout_activity_main.xml.flat",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-release-46:/drawable_ic_search.xml.flat",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/drawable/ic_search.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-release-46:/drawable_ic_playlist.xml.flat",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/drawable/ic_playlist.xml"
+    },
+    {
+        "merged": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-release-46:/mipmap_ic_launcher_round.png.flat",
+        "source": "/home/cyberghost/.gradle/daemon/8.9/com.example.swipfy.app-main-47:/mipmap/ic_launcher_round.png"
+    }
+]

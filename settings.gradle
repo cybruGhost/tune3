@@ -1,0 +1,2 @@
+rootProject.name = "SwipfyAndroid"
+include(":app")
