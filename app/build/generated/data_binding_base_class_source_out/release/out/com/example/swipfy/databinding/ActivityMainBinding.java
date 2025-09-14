@@ -5,18 +5,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.swipfy.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.chip.Chip;
+import com.google.android.material.chip.ChipGroup;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -35,19 +41,61 @@ public final class ActivityMainBinding implements ViewBinding {
   public final MaterialCardView cardWelcome;
 
   @NonNull
+  public final Chip chipElectronic;
+
+  @NonNull
+  public final ChipGroup chipGroup;
+
+  @NonNull
+  public final Chip chipHipHop;
+
+  @NonNull
+  public final Chip chipPop;
+
+  @NonNull
+  public final Chip chipRock;
+
+  @NonNull
+  public final LottieAnimationView emptyStateAnimation;
+
+  @NonNull
+  public final LinearLayout emptyStateLayout;
+
+  @NonNull
   public final ImageView ivLogo;
 
   @NonNull
   public final ImageView ivSearch;
 
   @NonNull
+  public final ProgressBar progressBar;
+
+  @NonNull
   public final RecyclerView recommendedRecyclerView;
+
+  @NonNull
+  public final LinearLayout recommendedSection;
+
+  @NonNull
+  public final TextView recommendedSubtitle;
 
   @NonNull
   public final TextView recommendedTitle;
 
   @NonNull
+  public final SwipeRefreshLayout swipeRefreshLayout;
+
+  @NonNull
   public final Toolbar toolbar;
+
+  @NonNull
+  public final TextView tvEmptyState;
+
+  @NonNull
+  public final TextView tvNewUserTip;
+
+  @NonNull
+  public final TextView tvViewAll;
 
   @NonNull
   public final TextView tvWelcomeSubtitle;
@@ -57,19 +105,39 @@ public final class ActivityMainBinding implements ViewBinding {
 
   private ActivityMainBinding(@NonNull CoordinatorLayout rootView,
       @NonNull BottomNavigationView bottomNavigation, @NonNull MaterialButton btnStartSwiping,
-      @NonNull MaterialCardView cardWelcome, @NonNull ImageView ivLogo, @NonNull ImageView ivSearch,
-      @NonNull RecyclerView recommendedRecyclerView, @NonNull TextView recommendedTitle,
-      @NonNull Toolbar toolbar, @NonNull TextView tvWelcomeSubtitle,
-      @NonNull TextView tvWelcomeTitle) {
+      @NonNull MaterialCardView cardWelcome, @NonNull Chip chipElectronic,
+      @NonNull ChipGroup chipGroup, @NonNull Chip chipHipHop, @NonNull Chip chipPop,
+      @NonNull Chip chipRock, @NonNull LottieAnimationView emptyStateAnimation,
+      @NonNull LinearLayout emptyStateLayout, @NonNull ImageView ivLogo,
+      @NonNull ImageView ivSearch, @NonNull ProgressBar progressBar,
+      @NonNull RecyclerView recommendedRecyclerView, @NonNull LinearLayout recommendedSection,
+      @NonNull TextView recommendedSubtitle, @NonNull TextView recommendedTitle,
+      @NonNull SwipeRefreshLayout swipeRefreshLayout, @NonNull Toolbar toolbar,
+      @NonNull TextView tvEmptyState, @NonNull TextView tvNewUserTip, @NonNull TextView tvViewAll,
+      @NonNull TextView tvWelcomeSubtitle, @NonNull TextView tvWelcomeTitle) {
     this.rootView = rootView;
     this.bottomNavigation = bottomNavigation;
     this.btnStartSwiping = btnStartSwiping;
     this.cardWelcome = cardWelcome;
+    this.chipElectronic = chipElectronic;
+    this.chipGroup = chipGroup;
+    this.chipHipHop = chipHipHop;
+    this.chipPop = chipPop;
+    this.chipRock = chipRock;
+    this.emptyStateAnimation = emptyStateAnimation;
+    this.emptyStateLayout = emptyStateLayout;
     this.ivLogo = ivLogo;
     this.ivSearch = ivSearch;
+    this.progressBar = progressBar;
     this.recommendedRecyclerView = recommendedRecyclerView;
+    this.recommendedSection = recommendedSection;
+    this.recommendedSubtitle = recommendedSubtitle;
     this.recommendedTitle = recommendedTitle;
+    this.swipeRefreshLayout = swipeRefreshLayout;
     this.toolbar = toolbar;
+    this.tvEmptyState = tvEmptyState;
+    this.tvNewUserTip = tvNewUserTip;
+    this.tvViewAll = tvViewAll;
     this.tvWelcomeSubtitle = tvWelcomeSubtitle;
     this.tvWelcomeTitle = tvWelcomeTitle;
   }
@@ -119,6 +187,48 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.chipElectronic;
+      Chip chipElectronic = ViewBindings.findChildViewById(rootView, id);
+      if (chipElectronic == null) {
+        break missingId;
+      }
+
+      id = R.id.chipGroup;
+      ChipGroup chipGroup = ViewBindings.findChildViewById(rootView, id);
+      if (chipGroup == null) {
+        break missingId;
+      }
+
+      id = R.id.chipHipHop;
+      Chip chipHipHop = ViewBindings.findChildViewById(rootView, id);
+      if (chipHipHop == null) {
+        break missingId;
+      }
+
+      id = R.id.chipPop;
+      Chip chipPop = ViewBindings.findChildViewById(rootView, id);
+      if (chipPop == null) {
+        break missingId;
+      }
+
+      id = R.id.chipRock;
+      Chip chipRock = ViewBindings.findChildViewById(rootView, id);
+      if (chipRock == null) {
+        break missingId;
+      }
+
+      id = R.id.emptyStateAnimation;
+      LottieAnimationView emptyStateAnimation = ViewBindings.findChildViewById(rootView, id);
+      if (emptyStateAnimation == null) {
+        break missingId;
+      }
+
+      id = R.id.emptyStateLayout;
+      LinearLayout emptyStateLayout = ViewBindings.findChildViewById(rootView, id);
+      if (emptyStateLayout == null) {
+        break missingId;
+      }
+
       id = R.id.ivLogo;
       ImageView ivLogo = ViewBindings.findChildViewById(rootView, id);
       if (ivLogo == null) {
@@ -131,9 +241,27 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.progressBar;
+      ProgressBar progressBar = ViewBindings.findChildViewById(rootView, id);
+      if (progressBar == null) {
+        break missingId;
+      }
+
       id = R.id.recommendedRecyclerView;
       RecyclerView recommendedRecyclerView = ViewBindings.findChildViewById(rootView, id);
       if (recommendedRecyclerView == null) {
+        break missingId;
+      }
+
+      id = R.id.recommendedSection;
+      LinearLayout recommendedSection = ViewBindings.findChildViewById(rootView, id);
+      if (recommendedSection == null) {
+        break missingId;
+      }
+
+      id = R.id.recommendedSubtitle;
+      TextView recommendedSubtitle = ViewBindings.findChildViewById(rootView, id);
+      if (recommendedSubtitle == null) {
         break missingId;
       }
 
@@ -143,9 +271,33 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.swipeRefreshLayout;
+      SwipeRefreshLayout swipeRefreshLayout = ViewBindings.findChildViewById(rootView, id);
+      if (swipeRefreshLayout == null) {
+        break missingId;
+      }
+
       id = R.id.toolbar;
       Toolbar toolbar = ViewBindings.findChildViewById(rootView, id);
       if (toolbar == null) {
+        break missingId;
+      }
+
+      id = R.id.tvEmptyState;
+      TextView tvEmptyState = ViewBindings.findChildViewById(rootView, id);
+      if (tvEmptyState == null) {
+        break missingId;
+      }
+
+      id = R.id.tvNewUserTip;
+      TextView tvNewUserTip = ViewBindings.findChildViewById(rootView, id);
+      if (tvNewUserTip == null) {
+        break missingId;
+      }
+
+      id = R.id.tvViewAll;
+      TextView tvViewAll = ViewBindings.findChildViewById(rootView, id);
+      if (tvViewAll == null) {
         break missingId;
       }
 
@@ -162,8 +314,11 @@ public final class ActivityMainBinding implements ViewBinding {
       }
 
       return new ActivityMainBinding((CoordinatorLayout) rootView, bottomNavigation,
-          btnStartSwiping, cardWelcome, ivLogo, ivSearch, recommendedRecyclerView, recommendedTitle,
-          toolbar, tvWelcomeSubtitle, tvWelcomeTitle);
+          btnStartSwiping, cardWelcome, chipElectronic, chipGroup, chipHipHop, chipPop, chipRock,
+          emptyStateAnimation, emptyStateLayout, ivLogo, ivSearch, progressBar,
+          recommendedRecyclerView, recommendedSection, recommendedSubtitle, recommendedTitle,
+          swipeRefreshLayout, toolbar, tvEmptyState, tvNewUserTip, tvViewAll, tvWelcomeSubtitle,
+          tvWelcomeTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

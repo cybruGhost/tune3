@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.swipfy.app-mergeReleaseResources-44:/values-ru/values-ru.xml",
+            "outputFile": "com.example.swipfy.app-mergeReleaseResources-45:/values-ru/values-ru.xml",
             "map": [
                 {
                     "source": "/home/cyberghost/.gradle/caches/8.9/transforms/18e2c646a40ac57f9983ff95d80ab165/transformed/jetified-media3-ui-1.2.1/res/values-ru/values-ru.xml",

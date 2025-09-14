@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.animation.AnimationUtils
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+import com.airbnb.lottie.LottieAnimationView
 import android.view.animation.OvershootInterpolator
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
@@ -109,89 +111,101 @@ class SwipeActivity : AppCompatActivity() {
         }
     }
 
-    private fun setupListeners() {
-        binding.fabLike.setOnClickListener {
-            animateButton(binding.fabLike)
+private fun setupListeners() {
+    binding.fabLike.setOnClickListener {
+        animateButton(binding.fabLike)
+        if (songs.isNotEmpty()) {
+            val currentSong = songs.getOrNull(currentPosition)
+            currentSong?.let { 
+                handleLike(it)
+                binding.feedbackAnimation.setAnimation(R.raw.like_animation)
+                binding.feedbackAnimation.repeatCount = 0
+                binding.feedbackAnimation.playAnimation()
+                binding.feedbackAnimation.isVisible = true
+                binding.feedbackAnimation.postDelayed({
+                    binding.feedbackAnimation.isVisible = false
+                }, binding.feedbackAnimation.duration)
+            }
+            swipeToNext()
+        }
+    }
+
+    binding.fabDislike.setOnClickListener {
+        animateButton(binding.fabDislike)
+        if (songs.isNotEmpty()) {
+            val currentSong = songs.getOrNull(currentPosition)
+            currentSong?.let { 
+                handleDislike(it)
+                binding.feedbackAnimation.setAnimation(R.raw.dislike_animation)
+                binding.feedbackAnimation.repeatCount = 0
+                binding.feedbackAnimation.playAnimation()
+                binding.feedbackAnimation.isVisible = true
+                binding.feedbackAnimation.postDelayed({
+                    binding.feedbackAnimation.isVisible = false
+                }, binding.feedbackAnimation.duration)
+            }
+            swipeToNext()
+        }
+    }
+
+    binding.fabAddToPlaylist.setOnClickListener {
+        animateButton(binding.fabAddToPlaylist)
+        if (songs.isNotEmpty()) {
+            val currentSong = songs.getOrNull(currentPosition)
+            currentSong?.let { addToPlaylist(it) }
+        }
+    }
+
+    binding.fabLyrics.setOnClickListener {
+        animateButton(binding.fabLyrics)
+        if (songs.isNotEmpty()) {
+            val currentSong = songs.getOrNull(currentPosition)
+            currentSong?.let { showLyrics(it) }
+        }
+    }
+
+    binding.fabShare.setOnClickListener {
+        animateButton(binding.fabShare)
+        if (songs.isNotEmpty()) {
+            val currentSong = songs.getOrNull(currentPosition)
+            currentSong?.let { shareSong(it) }
+        }
+    }
+
+    binding.fabPlayPause.setOnClickListener {
+        togglePlayback()
+    }
+
+    binding.root.setOnTouchListener(SwipeGestureListener(
+        onSwipeLeft = {
             if (songs.isNotEmpty()) {
                 val currentSong = songs.getOrNull(currentPosition)
-                currentSong?.let { 
-                    handleLike(it)
-                    showFeedbackAnimation(true)
-                }
+                currentSong?.let { handleDislike(it) }
                 swipeToNext()
             }
-        }
-
-        binding.fabDislike.setOnClickListener {
-            animateButton(binding.fabDislike)
+        },
+        onSwipeRight = {
             if (songs.isNotEmpty()) {
                 val currentSong = songs.getOrNull(currentPosition)
-                currentSong?.let { 
-                    handleDislike(it)
-                    showFeedbackAnimation(false)
-                }
+                currentSong?.let { handleLike(it) }
                 swipeToNext()
             }
-        }
-
-        binding.fabAddToPlaylist.setOnClickListener {
-            animateButton(binding.fabAddToPlaylist)
+        },
+        onSwipeUp = {
             if (songs.isNotEmpty()) {
                 val currentSong = songs.getOrNull(currentPosition)
                 currentSong?.let { addToPlaylist(it) }
             }
-        }
-
-        binding.fabLyrics.setOnClickListener {
-            animateButton(binding.fabLyrics)
+        },
+        onSwipeDown = {
             if (songs.isNotEmpty()) {
                 val currentSong = songs.getOrNull(currentPosition)
                 currentSong?.let { showLyrics(it) }
             }
         }
+    ))
+}
 
-        binding.fabShare.setOnClickListener {
-            animateButton(binding.fabShare)
-            if (songs.isNotEmpty()) {
-                val currentSong = songs.getOrNull(currentPosition)
-                currentSong?.let { shareSong(it) }
-            }
-        }
-
-        binding.fabPlayPause.setOnClickListener {
-            togglePlayback()
-        }
-
-        // Swipe gestures for quick actions
-        binding.root.setOnTouchListener(SwipeGestureListener(
-            onSwipeLeft = {
-                if (songs.isNotEmpty()) {
-                    val currentSong = songs.getOrNull(currentPosition)
-                    currentSong?.let { handleDislike(it) }
-                    swipeToNext()
-                }
-            },
-            onSwipeRight = {
-                if (songs.isNotEmpty()) {
-                    val currentSong = songs.getOrNull(currentPosition)
-                    currentSong?.let { handleLike(it) }
-                    swipeToNext()
-                }
-            },
-            onSwipeUp = {
-                if (songs.isNotEmpty()) {
-                    val currentSong = songs.getOrNull(currentPosition)
-                    currentSong?.let { addToPlaylist(it) }
-                }
-            },
-            onSwipeDown = {
-                if (songs.isNotEmpty()) {
-                    val currentSong = songs.getOrNull(currentPosition)
-                    currentSong?.let { showLyrics(it) }
-                }
-            }
-        ))
-    }
 
     private fun setupSearch() {
         binding.searchView.apply {

@@ -4,22 +4,32 @@ package com.example.swipfy.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.swipfy.R;
-import com.google.android.material.card.MaterialCardView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
 public final class ItemCardBinding implements ViewBinding {
   @NonNull
-  private final MaterialCardView rootView;
+  private final CardView rootView;
+
+  @NonNull
+  public final ImageButton btnPlayPreview;
+
+  @NonNull
+  public final ImageButton btnQuickAdd;
+
+  @NonNull
+  public final ImageButton btnQuickLike;
 
   @NonNull
   public final ImageView ivAlbumCover;
@@ -34,22 +44,31 @@ public final class ItemCardBinding implements ViewBinding {
   public final TextView tvArtistName;
 
   @NonNull
+  public final TextView tvDuration;
+
+  @NonNull
   public final TextView tvSongTitle;
 
-  private ItemCardBinding(@NonNull MaterialCardView rootView, @NonNull ImageView ivAlbumCover,
-      @NonNull LinearLayout songInfoLayout, @NonNull TextView tvAlbumName,
-      @NonNull TextView tvArtistName, @NonNull TextView tvSongTitle) {
+  private ItemCardBinding(@NonNull CardView rootView, @NonNull ImageButton btnPlayPreview,
+      @NonNull ImageButton btnQuickAdd, @NonNull ImageButton btnQuickLike,
+      @NonNull ImageView ivAlbumCover, @NonNull LinearLayout songInfoLayout,
+      @NonNull TextView tvAlbumName, @NonNull TextView tvArtistName, @NonNull TextView tvDuration,
+      @NonNull TextView tvSongTitle) {
     this.rootView = rootView;
+    this.btnPlayPreview = btnPlayPreview;
+    this.btnQuickAdd = btnQuickAdd;
+    this.btnQuickLike = btnQuickLike;
     this.ivAlbumCover = ivAlbumCover;
     this.songInfoLayout = songInfoLayout;
     this.tvAlbumName = tvAlbumName;
     this.tvArtistName = tvArtistName;
+    this.tvDuration = tvDuration;
     this.tvSongTitle = tvSongTitle;
   }
 
   @Override
   @NonNull
-  public MaterialCardView getRoot() {
+  public CardView getRoot() {
     return rootView;
   }
 
@@ -74,6 +93,24 @@ public final class ItemCardBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btnPlayPreview;
+      ImageButton btnPlayPreview = ViewBindings.findChildViewById(rootView, id);
+      if (btnPlayPreview == null) {
+        break missingId;
+      }
+
+      id = R.id.btnQuickAdd;
+      ImageButton btnQuickAdd = ViewBindings.findChildViewById(rootView, id);
+      if (btnQuickAdd == null) {
+        break missingId;
+      }
+
+      id = R.id.btnQuickLike;
+      ImageButton btnQuickLike = ViewBindings.findChildViewById(rootView, id);
+      if (btnQuickLike == null) {
+        break missingId;
+      }
+
       id = R.id.ivAlbumCover;
       ImageView ivAlbumCover = ViewBindings.findChildViewById(rootView, id);
       if (ivAlbumCover == null) {
@@ -98,14 +135,20 @@ public final class ItemCardBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tvDuration;
+      TextView tvDuration = ViewBindings.findChildViewById(rootView, id);
+      if (tvDuration == null) {
+        break missingId;
+      }
+
       id = R.id.tvSongTitle;
       TextView tvSongTitle = ViewBindings.findChildViewById(rootView, id);
       if (tvSongTitle == null) {
         break missingId;
       }
 
-      return new ItemCardBinding((MaterialCardView) rootView, ivAlbumCover, songInfoLayout,
-          tvAlbumName, tvArtistName, tvSongTitle);
+      return new ItemCardBinding((CardView) rootView, btnPlayPreview, btnQuickAdd, btnQuickLike,
+          ivAlbumCover, songInfoLayout, tvAlbumName, tvArtistName, tvDuration, tvSongTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

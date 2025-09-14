@@ -10,6 +10,7 @@ MERGED from [androidx.databinding:databinding-runtime:8.3.2] /home/cyberghost/.g
 MERGED from [androidx.databinding:viewbinding:8.3.2] /home/cyberghost/.gradle/caches/8.9/transforms/ceb0a50ef6745765300ce8d8f2b8e3d9/transformed/jetified-viewbinding-8.3.2/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.11.0] /home/cyberghost/.gradle/caches/8.9/transforms/7bdbf8a10eaad61afab17680a9eedf84/transformed/material-1.11.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/cyberghost/.gradle/caches/8.9/transforms/ddc44e953cdaf90c0a8f0de8b7bc93cc/transformed/constraintlayout-2.1.4/AndroidManifest.xml:2:1-11:12
+MERGED from [com.airbnb.android:lottie:5.2.0] /home/cyberghost/.gradle/caches/8.9/transforms/6db39e7019f6368ae53102a369845880/transformed/jetified-lottie-5.2.0/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/cyberghost/.gradle/caches/8.9/transforms/a1d2293775bdd0cd92831012b3dd60d9/transformed/jetified-appcompat-resources-1.6.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.appcompat:appcompat:1.6.1] /home/cyberghost/.gradle/caches/8.9/transforms/422563ac48a6f99c36701b0d5c69d22c/transformed/appcompat-1.6.1/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.media3:media3-ui:1.2.1] /home/cyberghost/.gradle/caches/8.9/transforms/18e2c646a40ac57f9983ff95d80ab165/transformed/jetified-media3-ui-1.2.1/AndroidManifest.xml:17:1-22:12
@@ -97,6 +98,8 @@ MERGED from [com.google.android.material:material:1.11.0] /home/cyberghost/.grad
 MERGED from [com.google.android.material:material:1.11.0] /home/cyberghost/.gradle/caches/8.9/transforms/7bdbf8a10eaad61afab17680a9eedf84/transformed/material-1.11.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/cyberghost/.gradle/caches/8.9/transforms/ddc44e953cdaf90c0a8f0de8b7bc93cc/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/cyberghost/.gradle/caches/8.9/transforms/ddc44e953cdaf90c0a8f0de8b7bc93cc/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
+MERGED from [com.airbnb.android:lottie:5.2.0] /home/cyberghost/.gradle/caches/8.9/transforms/6db39e7019f6368ae53102a369845880/transformed/jetified-lottie-5.2.0/AndroidManifest.xml:9:5-20
+MERGED from [com.airbnb.android:lottie:5.2.0] /home/cyberghost/.gradle/caches/8.9/transforms/6db39e7019f6368ae53102a369845880/transformed/jetified-lottie-5.2.0/AndroidManifest.xml:9:5-20
 MERGED from [androidx.emoji2:emoji2:1.2.0] /home/cyberghost/.gradle/caches/8.9/transforms/3b1ab8f368192fccb6fdd7746de78978/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.emoji2:emoji2:1.2.0] /home/cyberghost/.gradle/caches/8.9/transforms/3b1ab8f368192fccb6fdd7746de78978/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.core:core:1.12.0] /home/cyberghost/.gradle/caches/8.9/transforms/ddda2d7b58f7ad99bc937a382dcf5ef6/transformed/core-1.12.0/AndroidManifest.xml:28:5-89
@@ -213,6 +216,8 @@ MERGED from [com.google.android.material:material:1.11.0] /home/cyberghost/.grad
 MERGED from [com.google.android.material:material:1.11.0] /home/cyberghost/.gradle/caches/8.9/transforms/7bdbf8a10eaad61afab17680a9eedf84/transformed/material-1.11.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/cyberghost/.gradle/caches/8.9/transforms/ddc44e953cdaf90c0a8f0de8b7bc93cc/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/cyberghost/.gradle/caches/8.9/transforms/ddc44e953cdaf90c0a8f0de8b7bc93cc/transformed/constraintlayout-2.1.4/AndroidManifest.xml:5:5-7:41
+MERGED from [com.airbnb.android:lottie:5.2.0] /home/cyberghost/.gradle/caches/8.9/transforms/6db39e7019f6368ae53102a369845880/transformed/jetified-lottie-5.2.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.airbnb.android:lottie:5.2.0] /home/cyberghost/.gradle/caches/8.9/transforms/6db39e7019f6368ae53102a369845880/transformed/jetified-lottie-5.2.0/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/cyberghost/.gradle/caches/8.9/transforms/a1d2293775bdd0cd92831012b3dd60d9/transformed/jetified-appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] /home/cyberghost/.gradle/caches/8.9/transforms/a1d2293775bdd0cd92831012b3dd60d9/transformed/jetified-appcompat-resources-1.6.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.6.1] /home/cyberghost/.gradle/caches/8.9/transforms/422563ac48a6f99c36701b0d5c69d22c/transformed/appcompat-1.6.1/AndroidManifest.xml:20:5-44

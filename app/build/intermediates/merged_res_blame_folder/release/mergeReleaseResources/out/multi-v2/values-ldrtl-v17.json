@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.swipfy.app-mergeReleaseResources-44:/values-ldrtl-v17/values-ldrtl-v17.xml",
+            "outputFile": "com.example.swipfy.app-mergeReleaseResources-45:/values-ldrtl-v17/values-ldrtl-v17.xml",
             "map": [
                 {
                     "source": "/home/cyberghost/.gradle/caches/8.9/transforms/7bdbf8a10eaad61afab17680a9eedf84/transformed/material-1.11.0/res/values-ldrtl-v17/values-ldrtl-v17.xml",

@@ -9,6 +9,7 @@
     <color name="gray_100">#FFF5F5F5</color>
     <color name="gray_300">#FFE0E0E0</color>
     <color name="gray_500">#FF9E9E9E</color>
+    <color name="gray_600">#FF757575</color>
     <color name="gray_700">#FF616161</color>
     <color name="green_500">#FF4CAF50</color>
     <color name="orange_500">#FFFF9800</color>
@@ -59,6 +60,9 @@
         <item name="backgroundTint">?attr/colorPrimary</item>
         <item name="cornerRadius">28dp</item>
         <item name="elevation">8dp</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.App.CornerSize12" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerSize">12dp</item>
     </style>
     <style name="Theme.Swipfy" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/purple_500</item>

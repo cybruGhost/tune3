@@ -5,28 +5,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.swipfy.R;
+import com.google.android.material.imageview.ShapeableImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
 public final class ItemSongBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final CardView rootView;
 
   @NonNull
   public final LinearLayout actionButtons;
-
-  @NonNull
-  public final ImageButton btnAddToPlaylist;
 
   @NonNull
   public final ImageButton btnLike;
@@ -35,35 +32,39 @@ public final class ItemSongBinding implements ViewBinding {
   public final ImageButton btnPlay;
 
   @NonNull
-  public final ImageView ivAlbumArt;
+  public final ShapeableImageView ivAlbumArt;
 
   @NonNull
-  public final TextView tvAlbumName;
+  public final View nowPlayingIndicator;
 
   @NonNull
-  public final TextView tvArtistName;
+  public final TextView tvArtistAlbum;
+
+  @NonNull
+  public final TextView tvDuration;
 
   @NonNull
   public final TextView tvSongTitle;
 
-  private ItemSongBinding(@NonNull ConstraintLayout rootView, @NonNull LinearLayout actionButtons,
-      @NonNull ImageButton btnAddToPlaylist, @NonNull ImageButton btnLike,
-      @NonNull ImageButton btnPlay, @NonNull ImageView ivAlbumArt, @NonNull TextView tvAlbumName,
-      @NonNull TextView tvArtistName, @NonNull TextView tvSongTitle) {
+  private ItemSongBinding(@NonNull CardView rootView, @NonNull LinearLayout actionButtons,
+      @NonNull ImageButton btnLike, @NonNull ImageButton btnPlay,
+      @NonNull ShapeableImageView ivAlbumArt, @NonNull View nowPlayingIndicator,
+      @NonNull TextView tvArtistAlbum, @NonNull TextView tvDuration,
+      @NonNull TextView tvSongTitle) {
     this.rootView = rootView;
     this.actionButtons = actionButtons;
-    this.btnAddToPlaylist = btnAddToPlaylist;
     this.btnLike = btnLike;
     this.btnPlay = btnPlay;
     this.ivAlbumArt = ivAlbumArt;
-    this.tvAlbumName = tvAlbumName;
-    this.tvArtistName = tvArtistName;
+    this.nowPlayingIndicator = nowPlayingIndicator;
+    this.tvArtistAlbum = tvArtistAlbum;
+    this.tvDuration = tvDuration;
     this.tvSongTitle = tvSongTitle;
   }
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public CardView getRoot() {
     return rootView;
   }
 
@@ -94,12 +95,6 @@ public final class ItemSongBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.btnAddToPlaylist;
-      ImageButton btnAddToPlaylist = ViewBindings.findChildViewById(rootView, id);
-      if (btnAddToPlaylist == null) {
-        break missingId;
-      }
-
       id = R.id.btnLike;
       ImageButton btnLike = ViewBindings.findChildViewById(rootView, id);
       if (btnLike == null) {
@@ -113,20 +108,26 @@ public final class ItemSongBinding implements ViewBinding {
       }
 
       id = R.id.ivAlbumArt;
-      ImageView ivAlbumArt = ViewBindings.findChildViewById(rootView, id);
+      ShapeableImageView ivAlbumArt = ViewBindings.findChildViewById(rootView, id);
       if (ivAlbumArt == null) {
         break missingId;
       }
 
-      id = R.id.tvAlbumName;
-      TextView tvAlbumName = ViewBindings.findChildViewById(rootView, id);
-      if (tvAlbumName == null) {
+      id = R.id.nowPlayingIndicator;
+      View nowPlayingIndicator = ViewBindings.findChildViewById(rootView, id);
+      if (nowPlayingIndicator == null) {
         break missingId;
       }
 
-      id = R.id.tvArtistName;
-      TextView tvArtistName = ViewBindings.findChildViewById(rootView, id);
-      if (tvArtistName == null) {
+      id = R.id.tvArtistAlbum;
+      TextView tvArtistAlbum = ViewBindings.findChildViewById(rootView, id);
+      if (tvArtistAlbum == null) {
+        break missingId;
+      }
+
+      id = R.id.tvDuration;
+      TextView tvDuration = ViewBindings.findChildViewById(rootView, id);
+      if (tvDuration == null) {
         break missingId;
       }
 
@@ -136,8 +137,8 @@ public final class ItemSongBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ItemSongBinding((ConstraintLayout) rootView, actionButtons, btnAddToPlaylist,
-          btnLike, btnPlay, ivAlbumArt, tvAlbumName, tvArtistName, tvSongTitle);
+      return new ItemSongBinding((CardView) rootView, actionButtons, btnLike, btnPlay, ivAlbumArt,
+          nowPlayingIndicator, tvArtistAlbum, tvDuration, tvSongTitle);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

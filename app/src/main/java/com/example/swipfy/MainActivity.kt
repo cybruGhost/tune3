@@ -3,13 +3,10 @@ package com.example.swipfy
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.view.animation.AnimationUtils
-import android.view.animation.OvershootInterpolator
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.airbnb.lottie.LottieDrawable
 import com.example.swipfy.data.models.Song
 import com.example.swipfy.databinding.ActivityMainBinding
@@ -31,42 +28,34 @@ class MainActivity : AppCompatActivity() {
         setupNavigation()
         setupListeners()
         setupRecommendedList()
-        loadRecommendedContent()
         setupSwipeRefresh()
+        loadRecommendedContent()
     }
 
     private fun setupNavigation() {
-        binding.bottomNavigation.apply {
-            setOnNavigationItemSelectedListener { item ->
-                when (item.itemId) {
-                    R.id.navigation_discover -> {
-                        animateTabSelection(binding.navigationDiscover)
-                        true
-                    }
-                    R.id.navigation_swipe -> {
-                        startActivity(Intent(this@MainActivity, SwipeActivity::class.java))
-                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
-                        true
-                    }
-                    R.id.navigation_playlists -> {
-                        startActivity(Intent(this@MainActivity, PlaylistActivity::class.java))
-                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
-                        true
-                    }
-                    R.id.navigation_profile -> {
-                        startActivity(Intent(this@MainActivity, ProfileActivity::class.java))
-                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
-                        true
-                    }
-                    R.id.navigation_search -> {
-                        startActivity(Intent(this@MainActivity, SearchActivity::class.java))
-                        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
-                        true
-                    }
-                    else -> false
+        binding.bottomNavigation.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.navigation_discover -> {
+                    // Already on discover page
+                    true
                 }
+                R.id.navigation_swipe -> {
+                    startActivity(Intent(this@MainActivity, SwipeActivity::class.java))
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
+                    true
+                }
+                R.id.navigation_playlists -> {
+                    // Start playlist activity (create this activity later)
+                    showSnackbar("Playlists coming soon!")
+                    true
+                }
+                R.id.navigation_profile -> {
+                    // Start profile activity (create this activity later)
+                    showSnackbar("Profile coming soon!")
+                    true
+                }
+                else -> false
             }
-            selectedItemId = R.id.navigation_discover
         }
     }
 
@@ -77,13 +66,7 @@ class MainActivity : AppCompatActivity() {
             overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_down)
         }
 
-        binding.ivSearch.setOnClickListener {
-            animateButton(binding.ivSearch)
-            startActivity(Intent(this, SearchActivity::class.java))
-            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
-        }
-
-        // Quick genre filters
+        // Genre filters
         binding.chipRock.setOnClickListener { filterByGenre("Rock") }
         binding.chipPop.setOnClickListener { filterByGenre("Pop") }
         binding.chipHipHop.setOnClickListener { filterByGenre("HipHop") }
@@ -97,7 +80,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupRecommendedList() {
-        recommendedAdapter = SongAdapter(emptyList(), showPlayButton = true) { song, action ->
+        recommendedAdapter = SongAdapter(emptyList()) { song, action ->
             when (action) {
                 "play" -> playSong(song)
                 "like" -> handleLike(song)
@@ -111,20 +94,12 @@ class MainActivity : AppCompatActivity() {
                 LinearLayoutManager.HORIZONTAL, false)
             adapter = recommendedAdapter
             setHasFixedSize(true)
-            addItemDecoration(ItemSpacingDecoration(16))
         }
-
-        // Add scroll listener for parallax effect
-        binding.recommendedRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-                updateParallaxEffect()
-            }
-        })
     }
 
     private fun setupSwipeRefresh() {
         binding.swipeRefreshLayout.apply {
-            setColorSchemeResources(R.color.accent, R.color.purple_500, R.color.teal_200)
+            setColorSchemeResources(R.color.accent)
             setProgressBackgroundColorSchemeResource(R.color.card_background)
             setOnRefreshListener {
                 loadRecommendedContent()
@@ -142,11 +117,15 @@ class MainActivity : AppCompatActivity() {
 
         lifecycleScope.launch {
             try {
-                // Simulate loading for better UX
-                delay(800)
+                delay(1000) // Simulate loading
 
-                val recommendations = AlgorithmManager.getRecommendations(this@MainActivity)
-                
+                // For now, use dummy data - replace with your actual API calls
+                // Replace lines 124-126 with proper Song constructors:
+                val recommendations = listOf(
+                    Song("1", "Song 1", "Artist 1", "Album 1", "rock", "2023", 80, "https://example.com", 180, "https://example.com/cover.jpg", "https://example.com/preview.mp3"),
+                    Song("2", "Song 2", "Artist 2", "Album 2", "pop", "2023", 85, "https://example.com", 200, "https://example.com/cover.jpg", "https://example.com/preview.mp3"),
+                    Song("3", "Song 3", "Artist 3", "Album 3", "hiphop", "2023", 90, "https://example.com", 220, "https://example.com/cover.jpg", "https://example.com/preview.mp3")
+                )
                 runOnUiThread {
                     binding.progressBar.isVisible = false
                     binding.swipeRefreshLayout.isRefreshing = false
@@ -174,43 +153,23 @@ class MainActivity : AppCompatActivity() {
         recommendedAdapter.updateSongs(recommendations)
         binding.recommendedSection.isVisible = true
         binding.tvEmptyState.isVisible = false
+        binding.emptyStateAnimation.isVisible = false
 
-        // Show personalized message based on user preferences
-        val topGenres = AlgorithmManager.getTopGenres(this, 2)
-        if (topGenres.isNotEmpty()) {
-            val genreMessage = if (topGenres.size == 1) {
-                "Based on your love for ${topGenres[0].first}"
-            } else {
-                "Based on your taste in ${topGenres[0].first} & ${topGenres[1].first}"
-            }
-            binding.recommendedSubtitle.text = genreMessage
-            binding.recommendedSubtitle.isVisible = true
-        } else {
-            binding.recommendedSubtitle.text = "Popular tracks you might enjoy"
-            binding.recommendedSubtitle.isVisible = true
-        }
+        // Show personalized message
+        binding.recommendedSubtitle.text = "Popular tracks you might enjoy"
+        binding.recommendedSubtitle.isVisible = true
 
-        // Show new user encouragement if needed
-        val interactionCount = getInteractionCount()
-        if (interactionCount < 3) {
-            binding.tvNewUserTip.isVisible = true
-            binding.tvNewUserTip.text = "💡 Swipe more songs to get better recommendations!"
-        } else {
-            binding.tvNewUserTip.isVisible = false
-        }
+        // Show new user encouragement
+        binding.tvNewUserTip.isVisible = true
     }
 
     private fun showEmptyState() {
         binding.recommendedSection.isVisible = false
         binding.tvEmptyState.isVisible = true
+        binding.emptyStateAnimation.isVisible = true
         
-        val interactionCount = getInteractionCount()
-        binding.tvEmptyState.text = if (interactionCount == 0) {
-            "🎵 Start swiping to discover your music taste!"
-        } else {
-            "✨ Keep swiping to get more recommendations!"
-        }
-
+        binding.tvEmptyState.text = "🎵 Start swiping to discover your music taste!"
+        
         binding.emptyStateAnimation.apply {
             setAnimation(R.raw.music_discovery)
             playAnimation()
@@ -220,71 +179,37 @@ class MainActivity : AppCompatActivity() {
 
     private fun showErrorState() {
         binding.tvEmptyState.isVisible = true
-        binding.tvEmptyState.text = "⚠️ Couldn't load recommendations\nPull down to refresh"
+        binding.emptyStateAnimation.isVisible = true
+        binding.tvEmptyState.text = "⚠️ Couldn't load recommendations"
         binding.emptyStateAnimation.setAnimation(R.raw.error_state)
     }
 
     private fun filterByGenre(genre: String) {
-        val filteredSongs = AlgorithmManager.getRecommendationsByGenre(this, genre)
-        if (filteredSongs.isNotEmpty()) {
-            recommendedAdapter.updateSongs(filteredSongs)
-            binding.recommendedSubtitle.text = "Top $genre picks for you"
-            showSnackbar("Showing $genre recommendations")
-        } else {
-            showSnackbar("No $genre songs found")
-        }
+        showSnackbar("Filtering by $genre")
+        // Implement genre filtering logic here
     }
 
     private fun playSong(song: Song) {
-        val intent = Intent(this, SwipeActivity::class.java).apply {
+        startActivity(Intent(this, SwipeActivity::class.java).apply {
             putExtra("search_query", "${song.artist} ${song.title}")
-            putExtra("auto_play", true)
-        }
-        startActivity(intent)
-        overridePendingTransition(R.anim.slide_in_up, R.anim.slide_out_down)
+        })
     }
 
     private fun handleLike(song: Song) {
-        lifecycleScope.launch {
-            (application as SwipfyApp).musicRepository.addToLikedSongs(song)
-            AlgorithmManager.trackPreference(song, "like")
-            showSnackbar("❤️ Added to liked songs")
-            
-            // Refresh recommendations after a like
-            delay(1000)
-            loadRecommendedContent()
-        }
+        showSnackbar("❤️ Liked ${song.title}")
     }
 
     private fun addToPlaylist(song: Song) {
-        lifecycleScope.launch {
-            PlaylistDialog.show(this@MainActivity, song) { playlistName ->
-                lifecycleScope.launch {
-                    (application as SwipfyApp).musicRepository.addToPlaylist(song, playlistName)
-                    showSnackbar("📚 Added to $playlistName")
-                }
-            }
-        }
+        showSnackbar("📚 Added ${song.title} to playlist")
     }
 
     private fun shareSong(song: Song) {
         val shareIntent = Intent().apply {
             action = Intent.ACTION_SEND
-            putExtra(Intent.EXTRA_TEXT, "Check out this song I found on Swipfy: ${song.title} by ${song.artist}")
+            putExtra(Intent.EXTRA_TEXT, "Check out: ${song.title} by ${song.artist}")
             type = "text/plain"
         }
-        startActivity(Intent.createChooser(shareIntent, "Share this song"))
-    }
-
-    private fun updateParallaxEffect() {
-        val translationX = binding.recommendedRecyclerView.computeHorizontalScrollOffset() * 0.3f
-        binding.recommendedTitle.translationX = -translationX
-        binding.recommendedSubtitle.translationX = -translationX
-    }
-
-    private fun getInteractionCount(): Int {
-        val prefs = getSharedPreferences("swipfy_prefs", MODE_PRIVATE)
-        return prefs.getInt("interaction_count", 0)
+        startActivity(Intent.createChooser(shareIntent, "Share song"))
     }
 
     private fun animateButton(view: View) {
@@ -302,37 +227,7 @@ class MainActivity : AppCompatActivity() {
             .start()
     }
 
-    private fun animateTabSelection(view: View) {
-        view.animate()
-            .scaleX(1.1f)
-            .scaleY(1.1f)
-            .setDuration(200)
-            .withEndAction {
-                view.animate()
-                    .scaleX(1f)
-                    .scaleY(1f)
-                    .setDuration(200)
-                    .start()
-            }
-            .start()
-    }
-
     private fun showSnackbar(message: String) {
-        Snackbar.make(binding.root, message, Snackbar.LENGTH_SHORT)
-            .setAnimationMode(Snackbar.ANIMATION_MODE_SLIDE)
-            .show()
+        Snackbar.make(binding.root, message, Snackbar.LENGTH_SHORT).show()
     }
-
-    override fun onResume() {
-        super.onResume()
-        // Refresh recommendations when returning to the app
-        if (!isLoading) {
-            loadRecommendedContent()
-        }
-    }
-}
-
-// Item spacing decoration for RecyclerView
-class ItemSpacingDecoration(private val spacing: Int) : RecyclerView.ItemDecoration() {
-    // Implementation would go here
 }
