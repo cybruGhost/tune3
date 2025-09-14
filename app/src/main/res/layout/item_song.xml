@@ -1,105 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="80dp"
-    android:padding="8dp"
-    android:background="?attr/selectableItemBackground">
+    android:layout_marginHorizontal="8dp"
+    android:layout_marginVertical="4dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="2dp">
 
-    <!-- Album Thumbnail -->
-    <ImageView
-        android:id="@+id/ivAlbumArt"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:scaleType="centerCrop"
-        android:adjustViewBounds="true"
-        android:contentDescription="Album Art"
-        android:src="@drawable/ic_music_note"
-        android:clipToOutline="true"
-        android:background="@drawable/rounded_image"/>
-
-    <!-- Text Info -->
-    <LinearLayout
-        android:layout_width="0dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="8dp"
-        android:orientation="vertical"
-        app:layout_constraintStart_toEndOf="@+id/ivAlbumArt"
-        app:layout_constraintEnd_toStartOf="@+id/actionButtons"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        android:padding="12dp">
 
-        <TextView
-            android:id="@+id/tvSongTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Song Title"
-            android:textSize="16sp"
-            android:textColor="@color/text_primary"
-            android:textStyle="bold"
-            android:ellipsize="end"
-            android:maxLines="1"/>
+        <!-- Album Art with Rounded Corners -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/ivAlbumArt"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize12"
+            android:src="@drawable/ic_music_note"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
 
-        <TextView
-            android:id="@+id/tvArtistName"
-            android:layout_width="match_parent"
+        <!-- Song Info -->
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Artist Name"
-            android:textSize="14sp"
+            android:orientation="vertical"
+            android:paddingStart="12dp"
+            android:paddingEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/ivAlbumArt"
+            app:layout_constraintEnd_toStartOf="@+id/actionButtons"
+            app:layout_constraintStart_toEndOf="@+id/ivAlbumArt"
+            app:layout_constraintTop_toTopOf="@+id/ivAlbumArt">
+
+            <!-- Song Title -->
+            <TextView
+                android:id="@+id/tvSongTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Song Title"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <!-- Artist and Album -->
+            <TextView
+                android:id="@+id/tvArtistAlbum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Artist • Album"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <!-- Duration -->
+        <TextView
+            android:id="@+id/tvDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3:45"
             android:textColor="@color/text_secondary"
-            android:ellipsize="end"
-            android:maxLines="1"/>
-
-        <TextView
-            android:id="@+id/tvAlbumName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Album Name"
             android:textSize="12sp"
-            android:textColor="@color/text_secondary"
-            android:ellipsize="end"
-            android:maxLines="1"/>
+            app:layout_constraintBottom_toBottomOf="@+id/ivAlbumArt"
+            app:layout_constraintEnd_toStartOf="@+id/actionButtons"
+            app:layout_constraintTop_toTopOf="@+id/ivAlbumArt" />
 
-    </LinearLayout>
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:id="@+id/actionButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    <!-- Action Buttons -->
-    <LinearLayout
-        android:id="@+id/actionButtons"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+            <!-- Play Button -->
+            <ImageButton
+                android:id="@+id/btnPlay"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_play_circle"
+                android:tint="@color/accent"
+                android:contentDescription="Play" />
 
-        <ImageButton
-            android:id="@+id/btnPlay"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/ic_play"
-            android:tint="@color/accent"/>
+            <!-- Like Button -->
+            <ImageButton
+                android:id="@+id/btnLike"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_heart_outline"
+                android:tint="@color/gray_600"
+                android:contentDescription="Like" />
 
-        <ImageButton
-            android:id="@+id/btnLike"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_marginStart="8dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/ic_like_outline"
-            android:tint="@color/gray_500"/>
+        </LinearLayout>
 
-        <ImageButton
-            android:id="@+id/btnAddToPlaylist"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_marginStart="8dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/ic_playlist_add"
-            android:tint="@color/gray_500"/>
+        <!-- Now Playing Indicator -->
+        <View
+            android:id="@+id/nowPlayingIndicator"
+            android:layout_width="4dp"
+            android:layout_height="20dp"
+            android:background="@color/accent"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/ivAlbumArt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ivAlbumArt" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
